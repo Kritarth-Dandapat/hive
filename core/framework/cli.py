@@ -82,6 +82,11 @@ def main():
 
     register_testing_commands(subparsers)
 
+    # Register configuration commands (config models)
+    from framework.config.cli import register_config_commands
+
+    register_config_commands(subparsers)
+
     args = parser.parse_args()
 
     if hasattr(args, "func"):
